@@ -3,3 +3,4 @@
 
 //echo 'It works !';
 include ('variables/variable_types.php');
+include ('array/exercices.php');
