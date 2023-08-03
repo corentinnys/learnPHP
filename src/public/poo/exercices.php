@@ -27,25 +27,34 @@ class Beverage
 
 class Beer extends Beverage
 {
-    public $name;
-    public $alcoholPercentage;
+    private $_name;
+    private $_alcoholPercentage;
 
     public function __construct($color, $price, $name, $alcoholPercentage)
     {
         parent::__construct($color, $price);
-        $this->name = $name;
-        $this->alcoholPercentage = $alcoholPercentage;
+        $this->_name = $name;
+        $this->_alcoholPercentage = $alcoholPercentage;
     }
 
     public function getAlcoholPercentage()
     {
-        return $this->alcoholPercentage;
+        return $this->_alcoholPercentage;
+    }
+
+    private function beerInfo()
+    {
+        return "Bonjour je suis $this->_name ,j'ai un pourcentage de $this->_alcoholPercentage et j'ai une couleur $this->color";
+    }
+    public function getInfo()
+    {
+        return $this->beerInfo();
     }
 }
 
 
 
-$cola = new  Beverage("black", 2);
-$cola->getInfo();
-$duvel = new Beer("Blod", 12, "Duvel", 8.5);
+
+$duvel = new Beer("claire", 12, "Duvel", 8.5);
 echo $duvel->getAlcoholPercentage();
+echo $duvel->getInfo();
