@@ -1,6 +1,6 @@
 <?php
-
-class Bevrage
+namespace poo\exercice1;
+class Beverage
 {
     // The Properties
     public $color;
@@ -23,5 +23,29 @@ class Bevrage
     }
 }
 
-$cola = new  Bevrage("black", 2);
+
+
+class Beer extends Beverage
+{
+    public $name;
+    public $alcoholPercentage;
+
+    public function __construct($color, $price, $name, $alcoholPercentage)
+    {
+        parent::__construct($color, $price);
+        $this->name = $name;
+        $this->alcoholPercentage = $alcoholPercentage;
+    }
+
+    public function getAlcoholPercentage()
+    {
+        return $this->alcoholPercentage;
+    }
+}
+
+
+
+$cola = new  Beverage("black", 2);
 $cola->getInfo();
+$duvel = new Beer("Blod", 12, "Duvel", 8.5);
+echo $duvel->getAlcoholPercentage();

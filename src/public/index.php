@@ -6,4 +6,5 @@
 //include ('array/exercices.php');
 //include ('loops/exercices.php');
 //include ('functions/exercices.php');
-include ('poo/exercice-1.php');
+//include ('poo/exercices.php');
+include('poo/exercices.php');
